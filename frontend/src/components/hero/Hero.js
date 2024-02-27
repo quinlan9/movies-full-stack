@@ -22,7 +22,7 @@ const Hero = ({movies}) => {
         {
           movies && movies.map((movie) =>{
             // 打印出图片的 URL
-            console.log(movie.backdrops[0]); // 这行代码会打印出每个电影的背景图片 URL
+            console.log(movie.backdrops[0]); 
               return (
                 <Paper key={movie.imdbId}>
                   <div className='movie-card-contanier'>
