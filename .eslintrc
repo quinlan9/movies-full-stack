@@ -1,0 +1,24 @@
+{
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "plugins": ["react-hooks"],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/react-in-jsx-scope": "off", // 关闭对React必须在JSX作用域中的检查
+      "react/prop-types": 0 //防止在react组件定义中缺少props验证
+    },
+    "settings": {
+      "react": {
+        "version": "detect" // 自动检测React版本
+      }
+    },
+    "env": { "browser": true }
+  }
+  

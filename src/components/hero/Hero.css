@@ -1,0 +1,86 @@
+/*电影轮播图的最外层容器。
+这个容器的作用是包裹整个电影轮播图的结构，
+包括所有的电影海报、电影卡片、控制按钮等元素*/
+.movie-carousel-container{
+    width: 100vw;
+    background-color: black;
+}
+
+/*存放图片的容器*/
+.movie-poster{
+    height: 300px; /*容器高度300px*/
+    /*添加了宽1px,10px圆角的金色边框*/
+    border: 1px solid gold;
+    border-radius: 10px;
+    overflow: hidden;/*超出这个容器的部分被hidden*/
+}
+
+/*确保容器要大于图片*/
+.movie-poster > img{
+    height: 100%;
+    width: 100%;
+}
+/*整个电影卡片的容器,包含了主题,描述,海报等
+为电影卡片提供了一个基本的框架和背景*/
+.movie-card-container{
+    height: 550px;
+    background-color: black;
+}
+/*具体定义了卡片的视觉样式和布局*/
+.movie-card{
+    min-height: 550px; /* 或根据实际需要调整 */
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+  /*  background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,1),var(--img));
+*/
+
+.movie-detail{
+    position: absolute;
+    top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.movie-title{
+    color:white;
+    display: flex;
+    align-items: center;
+}
+
+.movie-buttons-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:300px;
+}
+
+.play-button-icon-container{
+    padding:0px;
+    margin:0px;
+    width:150px;
+}
+预告片播放按键
+.play-button-icon{
+    padding:0px;
+    margin:0px;
+    color:gold;
+    font-size: 3rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.play-button-icon:hover{
+    font-size: 4rem;
+    color:white;
+}
+
+@media only screen and (max-width: 800px) {
+    .movie-detail{
+        flex-direction: column;
+        align-items: center;
+        top:20px;
+    }
+}
