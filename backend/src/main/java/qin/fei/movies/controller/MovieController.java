@@ -1,4 +1,4 @@
-package qin.fei.movies;
+package qin.fei.movies.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import qin.fei.movies.model.Movie;
+import qin.fei.movies.service.MovieService;
 
 @RestController
 @RequestMapping("/api/v1/movies")
-@CrossOrigin(origins = "*")
 //set the base path for request mapping within this controller. 
 //every request mapping path in this controller will be prefixed with 'api/v1/movies'
 public class MovieController {
@@ -39,7 +42,12 @@ public class MovieController {
 		return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId),HttpStatus.OK);
 	}
 	
-
+	
+	@GetMapping("/search")
+	public ResponseEntity<List<Movie>> searchMovies(@RequestParam String query){
+		List<Movie> movies=movieService.searchMovies(query);
+		return new ResponseEntity<>(movies,HttpStatus.OK);
+	}
   
 	
 	

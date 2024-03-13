@@ -1,4 +1,4 @@
-package qin.fei.movies;
+package qin.fei.movies.model;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

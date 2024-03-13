@@ -1,4 +1,4 @@
-package qin.fei.movies;
+package qin.fei.movies.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,6 +6,9 @@ import java.util.Optional;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import qin.fei.movies.model.Movie;
+import qin.fei.movies.repository.MovieRepository;
 
 @Service
 public class MovieService {
@@ -23,5 +26,7 @@ public class MovieService {
 		return movieRepository.findMovieByImdbId(imdbId);
 	}
 	
-
+	public List<Movie> searchMovies(String query){
+		return movieRepository.findByTitleContainingIgnoreCase(query);
+	}
 }

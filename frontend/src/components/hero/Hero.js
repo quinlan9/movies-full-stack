@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import {Link, useNavigate} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import { useEffect } from 'react';
 
 const Hero = ({movies}) => {
-  
+  console.log("Hero 组件渲染");
+
   const navigate = useNavigate();
 
     function reviews(movieId)
@@ -15,14 +17,17 @@ const Hero = ({movies}) => {
         navigate(`/Reviews/${movieId}`);
     }
 
+    useEffect(() => {
+      console.log('Hero组件接收到的movies状态:', movies);
+    }, [movies]);
 
   return (
-    <div className='movie-carousel-contanier'>
+    <div className='movie-carousel-contanier' >
       <Carousel>
         {
           movies && movies.map((movie) =>{
             // 打印出图片的 URL
-            console.log(movie.backdrops[0]); // 这行代码会打印出每个电影的背景图片 URL
+            console.log(movie.backdrops[0]); 
               return (
                 <Paper key={movie.imdbId}>
                   <div className='movie-card-contanier'>

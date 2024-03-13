@@ -1,0 +1,12 @@
+.login-btn, .register-btn {
+    border: 2px solid white; /* Adjust the color as needed */
+    padding: 5px 10px; /* Adjust padding to your preference */
+    border-radius: 5px; /* Gives rounded corners for a button-like appearance */
+    background-color: rgba(255, 255, 255, 0.2); /* Slight background color, adjust as needed */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.login-btn:hover, .register-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Changes background on hover */
+}

@@ -1,10 +1,14 @@
-package qin.fei.movies;
+package qin.fei.movies.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
+
+import qin.fei.movies.model.Movie;
+import qin.fei.movies.model.Review;
+import qin.fei.movies.repository.ReviewRepository;
 
 @Service
 public class ReviewService {
